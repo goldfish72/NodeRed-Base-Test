@@ -68,7 +68,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 330,
+        "x": 370,
         "y": 160,
         "wires": []
     },
@@ -77,15 +77,86 @@
         "type": "mqtt in",
         "z": "7d97ba58.980d54",
         "name": "",
-        "topic": "tut/tests",
+        "topic": "tms/chat",
         "qos": "0",
         "datatype": "auto",
         "broker": "d3680dcc.99957",
-        "x": 120,
+        "x": 130,
         "y": 240,
         "wires": [
             [
                 "a8dc60fb.d3146"
+            ]
+        ]
+    },
+    {
+        "id": "7d930c49.e6f544",
+        "type": "mqtt out",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "topic": "tms/chat",
+        "qos": "0",
+        "retain": "",
+        "broker": "d3680dcc.99957",
+        "x": 320,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "73e32583.91f09c",
+        "type": "inject",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 360,
+        "wires": [
+            [
+                "7d930c49.e6f544"
+            ]
+        ]
+    },
+    {
+        "id": "1b3a5928.3ba637",
+        "type": "inject",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "hello",
+        "payloadType": "str",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "7d930c49.e6f544"
             ]
         ]
     }
