@@ -2,9 +2,30 @@
     {
         "id": "7d97ba58.980d54",
         "type": "tab",
-        "label": "Test-Debug",
+        "label": "Base-Test",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "d3680dcc.99957",
+        "type": "mqtt-broker",
+        "name": "MQTT-Broker",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
     },
     {
         "id": "bea2a4e3.b0d208",
@@ -50,5 +71,22 @@
         "x": 330,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "8e2102e6.153",
+        "type": "mqtt in",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "topic": "tut/tests",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "d3680dcc.99957",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "a8dc60fb.d3146"
+            ]
+        ]
     }
 ]
