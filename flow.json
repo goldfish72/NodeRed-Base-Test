@@ -28,6 +28,15 @@
         "willPayload": ""
     },
     {
+        "id": "517b32d9.365a3c",
+        "type": "postgresdb",
+        "cfgname": "Postgres",
+        "hostname": "mypostgres",
+        "port": "5432",
+        "db": "postgres",
+        "ssl": false
+    },
+    {
         "id": "bea2a4e3.b0d208",
         "type": "inject",
         "z": "7d97ba58.980d54",
@@ -157,6 +166,135 @@
         "wires": [
             [
                 "7d930c49.e6f544"
+            ]
+        ]
+    },
+    {
+        "id": "634256b7.2d6818",
+        "type": "inject",
+        "z": "7d97ba58.980d54",
+        "name": "JSON String",
+        "props": [
+            {
+                "p": "payload",
+                "v": "{\"a\":1}",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"a\":1}",
+        "payloadType": "str",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "a2fe0fc8.095e1"
+            ]
+        ]
+    },
+    {
+        "id": "a2fe0fc8.095e1",
+        "type": "json",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 520,
+        "wires": [
+            [
+                "9a4ce2b8.47698"
+            ]
+        ]
+    },
+    {
+        "id": "9a4ce2b8.47698",
+        "type": "debug",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 490,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "80032e2.7c92cd",
+        "type": "inject",
+        "z": "7d97ba58.980d54",
+        "name": "Object",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"a\":1}",
+        "payloadType": "json",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "cd40a0f4.4f5ac"
+            ]
+        ]
+    },
+    {
+        "id": "cd40a0f4.4f5ac",
+        "type": "json",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "478b4106.4fd7c"
+            ]
+        ]
+    },
+    {
+        "id": "478b4106.4fd7c",
+        "type": "debug",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 490,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5a52ad3.728f854",
+        "type": "mqtt in",
+        "z": "7d97ba58.980d54",
+        "name": "",
+        "topic": "tms/json",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "d3680dcc.99957",
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "a2fe0fc8.095e1"
             ]
         ]
     }
